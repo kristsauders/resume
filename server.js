@@ -18,5 +18,5 @@ var allowCrossDomain = function(req, res, next) {
 
 app.use(allowCrossDomain);
 
-app.listen(8082);
+app.listen(8084);
 console.log('Started up successfully.');
