@@ -213,7 +213,7 @@ Krists Auders'
                         return url.replace(exp,"").replace(exp2, "");
                     }
                 }
-                // Function for buildling HTML resume from JSON data, called by the callback function that retrieves the data
+                // Function for buildling HTML resume from JSON data, called by the callback function when the JSON data is retrieved on page load
                 function buildHtmlResume(data) {
                     var r = $('#resume');
                     r.append('<br/>');
@@ -221,13 +221,15 @@ Krists Auders'
                                 data.Address.split(',')[0] + '<br/>' + data.Address.split(',')[1] + '<br/>' + data.Phone + '<br/>' +
                                 data.Email + '</p>');
                     r.append('<hr style="margin-left:5%;margin-right:5%;background-color:#BDBDBD; height:2px;width:90%;" />');
+                    r.append('<h3 class="indent">OBJECTIVE</h4>');
+                    r.append('<div style="padding-left:3em;margin-left:5%;padding-right:6em;margin-right:10%;"><em class="half-muted">' + data['OBJECTIVE'] + '</em></div><br/>');
                     r.append('<h3 class="indent">SKILLS SUMMARY</h4>');
                     var skills = data['SKILLS SUMMARY'];
                     for(var section in skills) {
                         var skillsHtml = '';
                         skillsHtml += '<em class="indent">' + section + '</em><br/><div style="padding-left:3em;margin-left:5%;"><ul>';
                         for(var item in skills[section]) {
-                            skillsHtml += '<li><span class="muted">' + item + ':</span> ' + skills[section][item] + '</li>';
+                            skillsHtml += '<li><span class="half-muted">' + item + ':</span> ' + skills[section][item] + '</li>';
                         }
                         skillsHtml += '</ul></div>';
                         skillsHtml = activateURLs(skillsHtml);
@@ -238,7 +240,7 @@ Krists Auders'
                     for(var section in pe) {
                         var peHtml = '';
                         r.append('<strong class="indent">' + pe[section].Title + '</strong><br/>');
-                        r.append('<span class="muted indent">' + pe[section].Employer + '</span><br/>');
+                        r.append('<span class="half-muted indent">' + pe[section].Employer + '</span><br/>');
                         r.append('<span class="muted indent">' + pe[section].Dates + '</span><br/>');
                         peHtml += '<div style="padding-left:3em;margin-left:5%;width:70%;"><ul>';
                         var details = pe[section]['Details'];
@@ -253,7 +255,7 @@ Krists Auders'
                     var pp = data['PERSONAL PROJECTS'];
                     for(var section in pp) {
                         var ppHtml = '';
-                        r.append('<strong class="indent">' + activateURLs(pp[section].Title) + '</strong><br/>');
+                        r.append('<strong class="indent half-muted">' + activateURLs(pp[section].Title) + '</strong><br/>');
                         ppHtml += '<div style="padding-left:3em;margin-left:5%;width:70%;"><ul>';
                         var details = pp[section]['Details'];
                         for(var item in details) {
@@ -267,7 +269,7 @@ Krists Auders'
                     var ed = data['EDUCATION'];
                     for(var section in ed) {
                         r.append('<strong class="indent">' + activateURLs(ed[section].School) + '</strong><br/>');
-                        r.append('<span class="muted indent">' + activateURLs(ed[section].Subject) + '</span><br/>');
+                        r.append('<span class="half-muted indent">' + activateURLs(ed[section].Subject) + '</span><br/>');
                         r.append('<span class="muted indent">' + ed[section].Dates + '</span><br/>');
                         r.append('<br/>');
                     }

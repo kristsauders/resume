@@ -609,6 +609,9 @@ cite {
 .muted {
   color: #999999;
 }
+.half-muted {
+  color: #666666;
+}
 
 .text-warning {
   color: #c09853;

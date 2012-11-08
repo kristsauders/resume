@@ -10,7 +10,7 @@ var express = require('express'),
 app.use(express.static(__dirname));
 app.use(express.bodyParser());
 
-//CORS middleware
+//CORS middleware for anyone accessing my resume/API with cross-domain Javascript
 var allowCrossDomain = function(req, res, next) {
     //console.log(req.headers);
     if(req.headers.origin) {
@@ -24,6 +24,7 @@ var allowCrossDomain = function(req, res, next) {
 
 app.use(allowCrossDomain);
 
+// Function for sending an e-mail using my Gmail address
 function sendMail(address, subject, text) {
     //General send e-mail
     // create reusable transport method (opens pool of SMTP connections)
@@ -99,6 +100,7 @@ I will reply with an HTTP POST to your callback URL: ' + req.body.callback + '\n
 \n\n\n');
 });
 
+// Listen only from localhost, since this will be routed through a local Nginx proxy
 app.listen(8084, '127.0.0.1');
 
 // Rebuild PDF version of resume periodically
