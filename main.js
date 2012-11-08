@@ -1,54 +1,13 @@
+            $.cookie("prod_auth_access_token", "ffdd6f6ab3589983a347f1385aed6351");
+            $.cookie("prod_access_token", "441b6a6c38a433eb5f3a40e66f8874b0");
             api.init(null, null, null, function(data) {
                 $(document).ready(function(){
-                    $('#init').removeClass("disabled loading").text('Ready').addClass("btn-success");
-                    $('.needs-oauth').removeClass("disabled loading");
                 });
             }, function(error) {
-                $('<pre>' + JSON.stringify(JSON.parse(error), null, '\t') + '</pre>').dialog({modal:true, width:$(window).width()-100, height:$(window).height()-100});
+                alert('There was an error initializing the ATT-JS plugin. Some features might not be available.');
             });
-            // Functions for using a private riak key/value data storage for persistence
-            var riak = {
-                get: function(key, callback, errorCallback) {
-                    callback = callback || function(data) {
-                        alert(JSON.stringify(data));
-                    };
-                    errorCallback = errorCallback || function(error) {
-                        alert(error);
-                    };
-                    $.ajax({
-                        url: 'http://riak.kristsauders.com/buckets/att-js/keys/' + key,
-                        type: 'get',
-                        success: function(data) {
-                            callback(data);
-                        },
-                        error: function(jqXHR, textStatus, error) {
-                            errorCallback(jqXHR.responseText);
-                        }
-                    });
-                },
-                save: function(key, value, callback, errorCallback) {
-                    callback = callback || function(data) {};
-                    errorCallback = errorCallback || function(error) {
-                        alert(error);
-                    };
-                    $.ajax({
-                        url: 'http://riak.kristsauders.com/buckets/att-js/keys/' + key,
-                        type: 'post',
-                        data: value,
-                        success: function(data) {
-                            callback(data);
-                        },
-                        error: function(jqXHR, textStatus, error) {
-                            errorCallback(jqXHR.responseText);
-                        }
-                    });
-                }
-            };
             // Attach JQuery.click() functions to buttons
             $(document).ready(function() {
-                $("#pdf").click(function() {
-                    window.location = 'Krists_Auders_Resume.pdf';
-                });
                 $("#contactMe").click(function(e) {
                     e.preventDefault();
                     $('#contactMeModal').reveal();
@@ -63,6 +22,10 @@
                     api.sms.att.send('8588228604', $('#textMeMessage').val(), function(data) {
                         $('#textMeSubmit').removeClass("disabled loading");
                         $('#textMeModal').trigger('reveal:close');
+                        $('#thankYouModal').reveal();
+                        setTimeout(function() {
+                            $('#thankYouModal').trigger('reveal:close');
+                        }, 2000);
                     }, function(error) {
                         $('#textMeSubmit').removeClass("disabled loading");
                         $('<pre>' + syntaxHighlight(JSON.stringify(JSON.parse(error), null, '\t')) + '</pre>').dialog({
@@ -72,29 +35,115 @@
                         });
                     });
                 });
-
-                $(".authorize").click(function() {
-                    //api.oauth.authorize("TL,DC,MOBO,MIM");
-                    api.oauth.authorize("TL,MOBO,MIM");
+                $("#emailMe").click(function(e) {
+                    e.preventDefault();
+                    $('#contactMeModal').trigger('reveal:close');
+                    $('#emailMeModal').reveal();
                 });
-                $("#getLocation").click(function() {
-                    $('#getLocation').addClass("disabled loading");
-                    api.location.att.locate($('#requestedAccuracy').val(), $('#acceptableAccuracy').val(), $('#tolerance').val(), function(data) {
-                        $('#getLocation').removeClass("disabled loading");
-                        $('<pre>' + syntaxHighlight(JSON.stringify(data, null, '\t')) + '</pre>').dialog({
-                            modal: true,
-                            width: $(window).width() - 100,
-                            height: $(window).height() - 100
-                        });
-                        if (data.RequestError.ServiceException.MessageId == 'SVC0002') api.oauth.authorize("TL,DC,MOBO,MIM");
+                $("#emailMeSubmit").click(function() {
+                    $('#emailMeSubmit').addClass("disabled loading");
+                    $.ajax({
+                        url: '/resume/email',
+                        type: 'post',
+                        data: {
+                            "address": 'kristsauders@gmail.com',
+                            "subject": 'E-mail from ' + $('#emailMeAddress').val(),
+                            "text": $('#emailMeMessage').val()
+                        },
+                        success: function(data) {
+                            $('#emailMeSubmit').removeClass("disabled loading");
+                            $('#emailMeModal').trigger('reveal:close');
+                            $('#thankYouModal').reveal();
+                            setTimeout(function() {
+                                $('#thankYouModal').trigger('reveal:close');
+                            }, 2000);
+                        },
+                        error: function(jqXHR, textStatus, error) {
+                            alert(error);
+                        }
+                    });
+                });
+                $("#callMe").click(function(e) {
+                    e.preventDefault();
+                    $('#contactMeModal').trigger('reveal:close');
+                    $('#callMeModal').reveal();
+                });
+                $("#getText").click(function(e) {
+                    e.preventDefault();
+                    $('#contactMeModal').trigger('reveal:close');
+                    $('#getTextModal').reveal();
+                });
+                $("#getTextSubmit").click(function() {
+                    $('#getTextSubmit').addClass("disabled loading");
+                    api.mobo.att.send($('#getTextNumber').val().replace(/-/g, "").replace(/ /g, "").replace("tel:", "").replace("(","").replace(")","").replace("+1",""), 
+                                            'You requested the contact details of Krists Auders. You are receiving this from my personal phone number: (858) 822-8604. \
+My e-mail address is kristsauders@gmail.com. Thank you!', function(data) {
+                        $('#getTextSubmit').removeClass("disabled loading");
+                        $('#getTextModal').trigger('reveal:close');
+                        $('#thankYouModal').reveal();
+                        setTimeout(function() {
+                            $('#thankYouModal').trigger('reveal:close');
+                        }, 2000);
                     }, function(error) {
-                        $('#getLocation').removeClass("disabled loading");
+                        $('#getTextSubmit').removeClass("disabled loading");
+                        alert(error);
                         $('<pre>' + syntaxHighlight(JSON.stringify(JSON.parse(error), null, '\t')) + '</pre>').dialog({
                             modal: true,
                             width: $(window).width() - 100,
                             height: $(window).height() - 100
                         });
                     });
+                });
+                $("#getEmail").click(function(e) {
+                    e.preventDefault();
+                    $('#contactMeModal').trigger('reveal:close');
+                    $('#getEmailModal').reveal();
+                });
+                $("#getEmailSubmit").click(function() {
+                    $('#getEmailSubmit').addClass("disabled loading");
+                    $.ajax({
+                        url: '/resume/email',
+                        type: 'post',
+                        data: {
+                            "address": $('#getEmailAddress').val(),
+                            "subject": 'E-mail from Krists Auders ',
+                            "text": '\
+Hello, \n\
+\n\
+You requested to receive my contact information. This is an automated e-mail message from my personal\n\
+e-mail address, so you can reply directly to this message. I am also providing my full information below.\n\
+\n\
+Krists Auders\n\
+1818 E Madison St. Apt 414\n\
+Seattle WA - 98122\n\
+(858) 822-8604 (cell)\n\
+kristsauders@gmail.com\n\
+\n\
+Thank you!\n\
+Krists Auders'
+                        },
+                        success: function(data) {
+                            $('#getEmailSubmit').removeClass("disabled loading");
+                            $('#getEmailModal').trigger('reveal:close');
+                            $('#thankYouModal').reveal();
+                            setTimeout(function() {
+                                $('#thankYouModal').trigger('reveal:close');
+                            }, 2000);
+                        },
+                        error: function(jqXHR, textStatus, error) {
+                            alert(error);
+                        }
+                    });
+                });
+                $("#getCall").click(function(e) {
+                    e.preventDefault();
+                    $('#contactMeModal').trigger('reveal:close');
+                    $('#getCallModal').reveal();
+                });
+                $(".useApi,#useApi").click(function(e) {
+                    e.preventDefault();
+                    $('#contactMeModal').trigger('reveal:close');
+                    $('#useApiModal').reveal();
                 });
                 $("#startSession").click(function() {
                     $('#startSession').addClass("disabled loading");
@@ -108,44 +157,6 @@
                         });
                     }, function(error) {
                         $('#startSession').removeClass("disabled loading");
-                        $('<pre>' + syntaxHighlight(JSON.stringify(JSON.parse(error), null, '\t')) + '</pre>').dialog({
-                            modal: true,
-                            width: $(window).width() - 100,
-                            height: $(window).height() - 100
-                        });
-                    });
-                });
-                $("#sendSignal").click(function() {
-                    $('#sendSignal').addClass("disabled loading");
-                    api.tropo.att.signal($('#tropoId').val(), $('#tropoSignal').val(), function(data) {
-                        $('#sendSignal').removeClass("disabled loading");
-                        $('<pre>' + syntaxHighlight(JSON.stringify(data, null, '\t')) + '</pre>').dialog({
-                            modal: true,
-                            width: $(window).width() - 100,
-                            height: $(window).height() - 100
-                        });
-                    }, function(error) {
-                        $('#sendSignal').removeClass("disabled loading");
-                        $('<pre>' + syntaxHighlight(JSON.stringify(JSON.parse(error), null, '\t')) + '</pre>').dialog({
-                            modal: true,
-                            width: $(window).width() - 100,
-                            height: $(window).height() - 100
-                        });
-                    });
-                });
-                $("#sendMoboMessage").click(function() {
-                    $('#sendMoboMessage').addClass("disabled loading");
-                    api.mobo.att.send($('#sendMoboNumber').val(), $('#sendMoboText').val(), function(data) {
-                        $('#sendMoboMessage').removeClass("disabled loading");
-                        //$('#moboId').val(api.mobo.att.Id);
-                        $('<pre>' + syntaxHighlight(JSON.stringify(data, null, '\t')) + '</pre>').dialog({
-                            modal: true,
-                            width: $(window).width() - 100,
-                            height: $(window).height() - 100
-                        });
-                        if (data.RequestError.ServiceException.MessageId == 'SVC0002') api.oauth.authorize("TL,DC,MOBO,MIM");
-                    }, function(error) {
-                        $('#sendMoboMessage').removeClass("disabled loading");
                         $('<pre>' + syntaxHighlight(JSON.stringify(JSON.parse(error), null, '\t')) + '</pre>').dialog({
                             modal: true,
                             width: $(window).width() - 100,
@@ -179,17 +190,107 @@
                     }
                 });
                 // Event listeners for menu bar clicks
-                $('#docsButton').click(function() {
-                    $('#app').hide();
-                    $('#docs').show();
-                    $('#appButton').removeClass('active');
-                    $('#docsButton').addClass('active');
+                $('.getJson,#getJson').click(function() {
+                    $('#main').hide();
+                    $('#jsonResume').show();
+                    $('#resumeNavbar').removeClass('active');
+                    $('#apiNavbar').addClass('active');
                 });
-                $('#appButton').click(function() {
-                    $('#docs').hide();
-                    $('#app').show();
-                    $('#docsButton').removeClass('active');
-                    $('#appButton').addClass('active');
+                $('#resumeNavbar,#homeNavbar').click(function() {
+                    $('#jsonResume').hide();
+                    $('#main').show();
+                    $('#apiNavbar').removeClass('active');
+                    $('#resumeNavbar').addClass('active');
                 });
-                $('#docs').hide();
+                $('#jsonResume').hide();
+                // Function to find URLs and make them active links
+                function activateURLs(url) {
+                    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+                    var exp2 = /(\(|\))/g;
+                    if(window.location.toString().split('/').pop() != 'resume.html') {
+                        return url.replace(exp,"<a target='__blank' href='$1'>$1</a>");
+                    } else {
+                        return url.replace(exp,"").replace(exp2, "");
+                    }
+                }
+                // Function for buildling HTML resume from JSON data, called by the callback function that retrieves the data
+                function buildHtmlResume(data) {
+                    var r = $('#resume');
+                    r.append('<br/>');
+                    r.append('<p align="center"><strong>' + data.Name + '</strong><br/>' +
+                                data.Address.split(',')[0] + '<br/>' + data.Address.split(',')[1] + '<br/>' + data.Phone + '<br/>' +
+                                data.Email + '</p>');
+                    r.append('<hr style="margin-left:5%;margin-right:5%;background-color:#BDBDBD; height:2px;width:90%;" />');
+                    r.append('<h3 class="indent">SKILLS SUMMARY</h4>');
+                    var skills = data['SKILLS SUMMARY'];
+                    for(var section in skills) {
+                        var skillsHtml = '';
+                        skillsHtml += '<em class="indent">' + section + '</em><br/><div style="padding-left:3em;margin-left:5%;"><ul>';
+                        for(var item in skills[section]) {
+                            skillsHtml += '<li><span class="muted">' + item + ':</span> ' + skills[section][item] + '</li>';
+                        }
+                        skillsHtml += '</ul></div>';
+                        skillsHtml = activateURLs(skillsHtml);
+                        r.append(skillsHtml);
+                    }
+                    r.append('<h3 class="indent">PROFESSIONAL EXPERIENCE</h4>');
+                    var pe = data['PROFESSIONAL EXPERIENCE'];
+                    for(var section in pe) {
+                        var peHtml = '';
+                        r.append('<strong class="indent">' + pe[section].Title + '</strong><br/>');
+                        r.append('<span class="muted indent">' + pe[section].Employer + '</span><br/>');
+                        r.append('<span class="muted indent">' + pe[section].Dates + '</span><br/>');
+                        peHtml += '<div style="padding-left:3em;margin-left:5%;width:70%;"><ul>';
+                        var details = pe[section]['Details'];
+                        for(var item in details) {
+                            peHtml += '<li>' + details[item] + '</li>';
+                        }
+                        peHtml += '</ul></div>';
+                        peHtml = activateURLs(peHtml);
+                        r.append(peHtml);
+                    }
+                    r.append('<h3 class="indent">PERSONAL PROJECTS</h4>');
+                    var pp = data['PERSONAL PROJECTS'];
+                    for(var section in pp) {
+                        var ppHtml = '';
+                        r.append('<strong class="indent">' + activateURLs(pp[section].Title) + '</strong><br/>');
+                        ppHtml += '<div style="padding-left:3em;margin-left:5%;width:70%;"><ul>';
+                        var details = pp[section]['Details'];
+                        for(var item in details) {
+                            ppHtml += '<li>' + details[item] + '</li>';
+                        }
+                        ppHtml += '</ul></div>';
+                        ppHtml = activateURLs(ppHtml);
+                        r.append(ppHtml);
+                    }
+                    r.append('<h3 class="indent">EDUCATION</h4>');
+                    var ed = data['EDUCATION'];
+                    for(var section in ed) {
+                        r.append('<strong class="indent">' + activateURLs(ed[section].School) + '</strong><br/>');
+                        r.append('<span class="muted indent">' + activateURLs(ed[section].Subject) + '</span><br/>');
+                        r.append('<span class="muted indent">' + ed[section].Dates + '</span><br/>');
+                        r.append('<br/>');
+                    }
+                }
+                if(window.location.toString().split('/').pop() != 'resume.html')
+                    $('#curlExample').html(syntaxHighlight($('#curlExample').html()));
+                // Function to retrieve resume JSON data
+                function getResumeData() {
+                    $.ajax({
+                        url: '/resume.json',
+                        type: 'get',
+                        dataType: "json",
+                        success: function(data) {
+                            // Syntax highlight and load JSON data in JSON resume div
+                            $('#jsonResumeContent').html(syntaxHighlight(JSON.stringify(data, null, '\t')));
+                            // Then build the HTML resume from JSON
+                            buildHtmlResume(data);
+                        },
+                        error: function(jqXHR, textStatus, error) {
+                            alert(error);
+                            alert(jqXHR.responseText);
+                        }
+                    });
+                }
+                getResumeData();
             });
