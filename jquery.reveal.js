@@ -120,7 +120,21 @@
 					}		
 				}
 				modal.unbind('reveal:close');
-			});     
+			});         
+
+			//Custom closing animation when a second modal is opening right after this
+			modal.bind('reveal:close-first', function () {
+			  if(!locked) {
+					lockModal();
+					modal.animate({
+    					"opacity" : 0
+					}, options.animationspeed, function() {
+						modal.css({'opacity' : 1, 'visibility' : 'hidden', 'top' : topMeasure});
+						unlockModal();
+					});			
+				}
+				modal.unbind('reveal:close-first');
+			});   
    	
 /*---------------------------
  Open and add Closing Listeners

@@ -5,29 +5,30 @@
     "Email": "kristsauders@gmail.com",
     "OBJECTIVE": "Systems architect and rapid prototype developer with a keen sense of usability and design, very comfortable working with marketing and business stakeholders, looking for highly challenging work taking concepts all the way to finished products.",
     "SKILLS SUMMARY": {
-        "Protocols": {
-            "Network": "ARP/DHCP, DNS, BGP, TCP/IP, CORS;",
-            "Web Services": "RESTful, SOAP, ParlayX, OAuth, JSONP;",
-            "Data": "SMPP, HTTP, SCP, SFTP, SSL/TLS, SSH."
+        "Software Languages/Environments": {
+            "Frontend": "JQuery, YUI 3, Javascript, HTML5, CSS3;",
+            "Backend": "Node.JS, Node.JS, Perl, Java/JSP;",
+            "Database": "MongoDB, Riak, MySQL, CouchDB;",
+            "Scientific/Parallel": "Matlab, FORTRAN with MPI, C/C++."
         },
         "Operating Systems": {
-            "Linux/Unix": "Redhat Enterprise, BSD, Backtrack 5, CentOS, Debian, Ubuntu;",
+            "Linux/Unix": "CentOS, Redhat Enterprise, Backtrack, Ubuntu, FreeBSD, Debian;",
             "Windows": "Server 2008 R2, Server HPC, Hyper-V, Server 2012;",
             "Mac": "OSX Server, OSX Mountain Lion (and older)."
         },
-        "Software Languages/Environments": {
-            "Web": "Java/JSP, Node.JS, Ruby, Javascript, HTML5, CSS3, JQuery, YUI 3;",
-            "Server": "Perl, C/C++, SQL, MongoDB, CouchDB, Riak;",
-            "Scientific/Parallel": "Matlab, FORTRAN with MPI, C/C++."
-        },
         "Tools": {
             "Networking": "Wireshark, Nessus, tcpdump, netcat, curl, aircrack-ng suite, SoapUI;",
-            "Web Hosting": "Apache 2, Tomcat 6/7, Sinatra, Jetty, Nginx, BIND 9, Drupal 7;",
+            "Web Hosting": "Apache, Tomcat, Sinatra, Jetty, Nginx, BIND, Drupal;",
             "Server Administration": "Webmin, Parallels Plesk, Apigee Key Manager;",
             "Monitoring": "Nagios, Apigee Control Center, Google Analytics, Browsermob, WebMetrics;",
-            "Virtualization": "VMWare, Hyper-V, VirtualBox, Proxmox VE, Parallels, Stackato, Amazon AWS;",
+            "Virtualization": "Amazon Web Services, VMWare Fusion, Hyper-V, VirtualBox, Proxmox VE, Parallels, Stackato;",
             "Development": "Cloud9 IDE, XML Spy, Eclipse, Xcode, Aptana;",
-            "Miscellaneous": "Github, GitLab, Quality Centre, Visio."
+            "Miscellaneous": "Github, GitLab, Mercurial, Quality Centre, Visio."
+        },
+        "Protocols": {
+            "Network": "ARP/DHCP, DNS, BGP, TCP/IP;",
+            "Web Services": "RESTful, SOAP, ParlayX, OAuth, JSONP, CORS;",
+            "Data": "SMPP, HTTP, SCP, SFTP, SSL/TLS, SSH."
         }
     },
     "PROFESSIONAL EXPERIENCE": [

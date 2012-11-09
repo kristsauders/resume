@@ -14,14 +14,14 @@
                 });
                 $("#textMe").click(function(e) {
                     e.preventDefault();
-                    $('#contactMeModal').trigger('reveal:close');
+                    $('#contactMeModal').trigger('reveal:close-first');
                     $('#textMeModal').reveal();
                 });
                 $("#textMeSubmit").click(function() {
                     $('#textMeSubmit').addClass("disabled loading");
                     api.sms.att.send('8588228604', $('#textMeMessage').val(), function(data) {
                         $('#textMeSubmit').removeClass("disabled loading");
-                        $('#textMeModal').trigger('reveal:close');
+                        $('#textMeModal').trigger('reveal:close-first');
                         $('#thankYouModal').reveal();
                         setTimeout(function() {
                             $('#thankYouModal').trigger('reveal:close');
@@ -37,7 +37,7 @@
                 });
                 $("#emailMe").click(function(e) {
                     e.preventDefault();
-                    $('#contactMeModal').trigger('reveal:close');
+                    $('#contactMeModal').trigger('reveal:close-first');
                     $('#emailMeModal').reveal();
                 });
                 $("#emailMeSubmit").click(function() {
@@ -52,7 +52,7 @@
                         },
                         success: function(data) {
                             $('#emailMeSubmit').removeClass("disabled loading");
-                            $('#emailMeModal').trigger('reveal:close');
+                            $('#emailMeModal').trigger('reveal:close-first');
                             $('#thankYouModal').reveal();
                             setTimeout(function() {
                                 $('#thankYouModal').trigger('reveal:close');
@@ -65,12 +65,12 @@
                 });
                 $("#callMe").click(function(e) {
                     e.preventDefault();
-                    $('#contactMeModal').trigger('reveal:close');
+                    $('#contactMeModal').trigger('reveal:close-first');
                     $('#callMeModal').reveal();
                 });
                 $("#getText").click(function(e) {
                     e.preventDefault();
-                    $('#contactMeModal').trigger('reveal:close');
+                    $('#contactMeModal').trigger('reveal:close-first');
                     $('#getTextModal').reveal();
                 });
                 $("#getTextSubmit").click(function() {
@@ -79,7 +79,7 @@
                                             'You requested the contact details of Krists Auders. You are receiving this from my personal phone number: (858) 822-8604. \
 My e-mail address is kristsauders@gmail.com. Thank you!', function(data) {
                         $('#getTextSubmit').removeClass("disabled loading");
-                        $('#getTextModal').trigger('reveal:close');
+                        $('#getTextModal').trigger('reveal:close-first');
                         $('#thankYouModal').reveal();
                         setTimeout(function() {
                             $('#thankYouModal').trigger('reveal:close');
@@ -96,7 +96,7 @@ My e-mail address is kristsauders@gmail.com. Thank you!', function(data) {
                 });
                 $("#getEmail").click(function(e) {
                     e.preventDefault();
-                    $('#contactMeModal').trigger('reveal:close');
+                    $('#contactMeModal').trigger('reveal:close-first');
                     $('#getEmailModal').reveal();
                 });
                 $("#getEmailSubmit").click(function() {
@@ -124,7 +124,7 @@ Krists Auders'
                         },
                         success: function(data) {
                             $('#getEmailSubmit').removeClass("disabled loading");
-                            $('#getEmailModal').trigger('reveal:close');
+                            $('#getEmailModal').trigger('reveal:close-first');
                             $('#thankYouModal').reveal();
                             setTimeout(function() {
                                 $('#thankYouModal').trigger('reveal:close');
@@ -137,12 +137,12 @@ Krists Auders'
                 });
                 $("#getCall").click(function(e) {
                     e.preventDefault();
-                    $('#contactMeModal').trigger('reveal:close');
+                    $('#contactMeModal').trigger('reveal:close-first');
                     $('#getCallModal').reveal();
                 });
                 $(".useApi,#useApi").click(function(e) {
                     e.preventDefault();
-                    $('#contactMeModal').trigger('reveal:close');
+                    $('#contactMeModal').trigger('reveal:close-first');
                     $('#useApiModal').reveal();
                 });
                 $("#startSession").click(function() {
