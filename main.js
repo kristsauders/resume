@@ -66,7 +66,12 @@
                 });
                 $("#callMeSubmit").click(function() {
                     $('#callMeSubmit').addClass("disabled loading");
-                    api.tropo.att.session({'number': '8588228604', 'messageToSay':'This message is from ' + $('#callMeNumber').val() + '. ' + $('#callMeMessage').val()}, function(data) {
+                    api.tropo.att.session({
+                        'number': '8588228604', 
+                        'messageToSay':'This message is from ' + $('#callMeNumber').val() + '. ' + 
+                        'This message is from ' + $('#callMeNumber').val() + '. ' + 
+                        $('#callMeMessage').val()}, 
+                    function(data) {
                         $('#callMeSubmit').removeClass("disabled loading");
                         $('#callMeModal').trigger('reveal:close-first');
                         $('#thankYouModal').reveal();
