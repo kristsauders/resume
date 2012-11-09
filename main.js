@@ -1,5 +1,5 @@
-            $.cookie("prod_auth_access_token", "ffdd6f6ab3589983a347f1385aed6351");
-            $.cookie("prod_access_token", "441b6a6c38a433eb5f3a40e66f8874b0");
+            $.cookie("prod_auth_access_token", "b6ed586e493147a7e229f8044c6d2b9e");
+            $.cookie("prod_access_token", "6eb12f6593cd5b0b067e3255266422df");
             api.init(null, null, null, function(data) {
                 $(document).ready(function(){
                 });
@@ -28,11 +28,7 @@
                         }, 2000);
                     }, function(error) {
                         $('#textMeSubmit').removeClass("disabled loading");
-                        $('<pre>' + syntaxHighlight(JSON.stringify(JSON.parse(error), null, '\t')) + '</pre>').dialog({
-                            modal: true,
-                            width: $(window).width() - 100,
-                            height: $(window).height() - 100
-                        });
+                        alert('There was an error sending the message.');
                     });
                 });
                 $("#emailMe").click(function(e) {
@@ -59,7 +55,7 @@
                             }, 2000);
                         },
                         error: function(jqXHR, textStatus, error) {
-                            alert(error);
+                            alert('There was an error sending the message.');
                         }
                     });
                 });
@@ -67,6 +63,21 @@
                     e.preventDefault();
                     $('#contactMeModal').trigger('reveal:close-first');
                     $('#callMeModal').reveal();
+                });
+                $("#callMeSubmit").click(function() {
+                    $('#callMeSubmit').addClass("disabled loading");
+                    api.tropo.att.session({'number': '8588228604', 'messageToSay':'This message is from ' + $('#callMeNumber').val() + '. ' + $('#callMeMessage').val()}, function(data) {
+                        $('#callMeSubmit').removeClass("disabled loading");
+                        $('#callMeModal').trigger('reveal:close-first');
+                        $('#thankYouModal').reveal();
+                        setTimeout(function() {
+                            $('#thankYouModal').trigger('reveal:close');
+                        }, 2000);
+                    }, function(error) {
+                        $('#callMeSubmit').removeClass("disabled loading");
+                        $('#callMeModal').trigger('reveal:close');
+                        alert('There was an error making the call.');
+                    });
                 });
                 $("#getText").click(function(e) {
                     e.preventDefault();
@@ -86,12 +97,7 @@ My e-mail address is kristsauders@gmail.com. Thank you!', function(data) {
                         }, 2000);
                     }, function(error) {
                         $('#getTextSubmit').removeClass("disabled loading");
-                        alert(error);
-                        $('<pre>' + syntaxHighlight(JSON.stringify(JSON.parse(error), null, '\t')) + '</pre>').dialog({
-                            modal: true,
-                            width: $(window).width() - 100,
-                            height: $(window).height() - 100
-                        });
+                        alert('There was an error sending the message.');
                     });
                 });
                 $("#getEmail").click(function(e) {
@@ -131,7 +137,7 @@ Krists Auders'
                             }, 2000);
                         },
                         error: function(jqXHR, textStatus, error) {
-                            alert(error);
+                            alert('There was an error sending the message.');
                         }
                     });
                 });
@@ -140,29 +146,25 @@ Krists Auders'
                     $('#contactMeModal').trigger('reveal:close-first');
                     $('#getCallModal').reveal();
                 });
+                $("#getCallSubmit").click(function() {
+                    $('#getCallSubmit').addClass("disabled loading");
+                    api.tropo.att.session({'number':$('#getCallNumber').val(), 'messageToSay': 'http://attjs.kristsauders.com/brettdennen.mp3'}, function(data) {
+                        $('#getCallSubmit').removeClass("disabled loading");
+                        $('#getCallModal').trigger('reveal:close-first');
+                        $('#thankYouModal').reveal();
+                        setTimeout(function() {
+                            $('#thankYouModal').trigger('reveal:close');
+                        }, 2000);
+                    }, function(error) {
+                        $('#getCallSubmit').removeClass("disabled loading");
+                        $('#getCallModal').trigger('reveal:close');
+                        alert('There was an error making the call.');
+                    });
+                });
                 $(".useApi,#useApi").click(function(e) {
                     e.preventDefault();
                     $('#contactMeModal').trigger('reveal:close-first');
                     $('#useApiModal').reveal();
-                });
-                $("#startSession").click(function() {
-                    $('#startSession').addClass("disabled loading");
-                    api.tropo.att.session({'number':$('#tropoNumber').val(), 'messageToSay':$('#tropoMessage').val()}, function(data) {
-                        $('#startSession').removeClass("disabled loading");
-                        $('#tropoId').val(api.tropo.att.Id);
-                        $('<pre>' + syntaxHighlight(JSON.stringify(data, null, '\t')) + '</pre>').dialog({
-                            modal: true,
-                            width: $(window).width() - 100,
-                            height: $(window).height() - 100
-                        });
-                    }, function(error) {
-                        $('#startSession').removeClass("disabled loading");
-                        $('<pre>' + syntaxHighlight(JSON.stringify(JSON.parse(error), null, '\t')) + '</pre>').dialog({
-                            modal: true,
-                            width: $(window).width() - 100,
-                            height: $(window).height() - 100
-                        });
-                    });
                 });
                 // clear input on focus
                 var clearMePrevious = '';
