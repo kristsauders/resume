@@ -85,12 +85,12 @@
     ],
     "PERSONAL PROJECTS": [
         {
-            "Title": "Interactive Online Resumé",
+            "Title": "Interactive Online Résumé",
             "Details": [
                 "Available at kristsauders.com/resume",
                 "Frontend design with JQuery, Twitter Bootstrap;",
                 "Backend built with Node.JS, using Express, through an Nginx proxy;",
-                "Resumé is stored as a JSON document, HTML and PDF versions are rendered programmatically;",
+                "Résumé is stored as a JSON document, HTML and PDF versions are rendered programmatically;",
                 "Texting and calling features use the ATT-JS Javascript plugin I wrote;",
                 "API logic uses Restler, and e-mails sent using Nodemailer."
             ]

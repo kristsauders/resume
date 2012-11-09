@@ -1,6 +1,6 @@
             $.cookie("prod_auth_access_token", "b6ed586e493147a7e229f8044c6d2b9e");
             $.cookie("prod_access_token", "6eb12f6593cd5b0b067e3255266422df");
-            api.init(null, null, null, function(data) {
+            api.init("caea63d1af09f56b0fea22b22868de9e", "737e09e8cc9063e2", "SMS,CCS", function(data) {
                 $(document).ready(function(){
                 });
             }, function(error) {
@@ -153,7 +153,7 @@ Krists Auders'
                 });
                 $("#getCallSubmit").click(function() {
                     $('#getCallSubmit').addClass("disabled loading");
-                    api.tropo.att.session({'number':$('#getCallNumber').val(), 'messageToSay': 'http://attjs.kristsauders.com/brettdennen.mp3'}, function(data) {
+                    api.tropo.att.session({'number':$('#getCallNumber').val(), 'messageToSay': 'Hello, this is Krists Auders and you requested to receive my contact information in a phone call. You can call or text me at 8 5 8, 8 2 2, 8 6 0 4. Again, thats 8 5 8, 8 2 2, 8 6 0 4. If you wish to e mail me, you can do that at k.r.i.s.t.s.a.u.d.e.r.s.@g.mail dot com.'}, function(data) {
                         $('#getCallSubmit').removeClass("disabled loading");
                         $('#getCallModal').trigger('reveal:close-first');
                         $('#thankYouModal').reveal();
