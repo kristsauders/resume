@@ -46,10 +46,7 @@
                 "Built JavaScript plugin prototype and documentation for accessing AT&T APIs, to gain support for implementing proper Cross Origin Resource Sharing (CORS) (http://attjs.kristsauders.com);",
                 "Managed Github repository structure for AT&T API Platform (https://github.com/attdevsupport);",
                 "Main administrator/manager of Linux & Windows servers hosting demos and documentation of all sample code, SDKs, and other tools for the program;",
-                "Wrote numerous tools/scripts for automation and testing in various languages;",
-                "Determined integrated hardware and software architecture solutions that meet performance, usability, scalability, reliability, and security needs;",
-                "Researched and recommended technology to improve the current systems;",
-                "Mentored and provided technical guidance and explained advanced concepts to others in work area."
+                "Wrote numerous tools/scripts for automation and testing in various languages."
             ]
         },
         {
@@ -87,6 +84,17 @@
         }
     ],
     "PERSONAL PROJECTS": [
+        {
+            "Title": "Interactive Online Resumé",
+            "Details": [
+                "Available at kristsauders.com/resume",
+                "Frontend design with JQuery, Twitter Bootstrap;",
+                "Backend built with Node.JS, using Express, through an Nginx proxy;",
+                "Resumé is stored as a JSON document, HTML and PDF versions are rendered programmatically;",
+                "Texting and calling features use the ATT-JS Javascript plugin I wrote;",
+                "API logic uses Restler, and e-mails sent using Nodemailer."
+            ]
+        },
         {
             "Title": "Drag & Drop Online Portfolio/Gallery Builder (http://photo.kristsauders.com)",
             "Details": [

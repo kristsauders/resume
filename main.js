@@ -19,7 +19,7 @@
                 });
                 $("#textMeSubmit").click(function() {
                     $('#textMeSubmit').addClass("disabled loading");
-                    api.sms.att.send('8588228604', $('#textMeMessage').val(), function(data) {
+                    api.sms.att.send('8588228604', 'Message from ' + $('#textMeNumber').val() + ': ' + $('#textMeMessage').val(), function(data) {
                         $('#textMeSubmit').removeClass("disabled loading");
                         $('#textMeModal').trigger('reveal:close-first');
                         $('#thankYouModal').reveal();
