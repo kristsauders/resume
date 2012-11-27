@@ -2,7 +2,7 @@ var config = {};
 
 config.email = {};
 
-config.email.username = "";
+config.email.username = "kristsauders";
 config.email.password = "";
 
 module.exports = config;

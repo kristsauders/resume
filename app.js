@@ -4,10 +4,10 @@ var express = require('express'),
     exec = require('child_process').exec,
     rest = require('restler'),
     nodemailer = require('nodemailer'),
-    config = require('../resume-config.js'),
+    config = require('./config.js'),
     callback = '';
     
-app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/public'));
 app.use(express.bodyParser());
 
 //CORS middleware for anyone accessing my resume/API with cross-domain Javascript
