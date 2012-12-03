@@ -107,9 +107,11 @@ app.listen(8084, '127.0.0.1');
 setInterval(function() {
     var date = new Date();
     console.log('Rebuilding PDF resume on ' + date.toLocaleString());
-    exec('xvfb-run --server-args="-screen 0, 1280x1024x24" ' + __dirname + '/wkhtmltopdf --use-xserver http://kristsauders.com/resume/resume.html ' + __dirname + '/public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
+    exec('xvfb-run --server-args="-screen 0, 1280x1024x24" wkhtmltopdf --use-xserver http://kristsauders.com/resume/resume.html ' + __dirname + '/public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
         if (error !== null) {
           console.log('exec error: ' + error);
+          console.log(stdout);
+          console.log(stderr);
         }
     });
 }, 600000);
