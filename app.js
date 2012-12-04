@@ -4,7 +4,7 @@ var express = require('express'),
     exec = require('child_process').exec,
     rest = require('restler'),
     nodemailer = require('nodemailer'),
-    config = require('../config.js'),
+    config = require('./config.js'),
     callback = '';
     
 app.use(express.static(__dirname + '/public'));
