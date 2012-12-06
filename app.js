@@ -32,7 +32,7 @@ function sendMail(address, subject, text) {
         service: "Gmail",
         auth: {
             user: config.email.username,
-            pass: config.email.password
+            pass: ENV_EMAIL_PASSWD || config.email.password
         }
     });
     // setup e-mail data with unicode symbols
@@ -103,17 +103,15 @@ I will reply with an HTTP POST to your callback URL: ' + req.body.callback + '\n
 // Listen only from localhost, since this will be routed through a local Nginx proxy
 app.listen(8084, '127.0.0.1');
 
-// Rebuild PDF version of resume periodically
-setInterval(function() {
+// Rebuild PDF version of resume on start, will only work on OSX with wkhtmltopdf installed
     var date = new Date();
     console.log('Rebuilding PDF resume on ' + date.toLocaleString());
-    exec('xvfb-run --server-args="-screen 0, 1280x1024x24" wkhtmltopdf --use-xserver http://kristsauders.com/resume/resume.html ' + __dirname + '/public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
+    exec('/Applications/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf http://kristsauders.com/resume/resume.html ' + __dirname + '/public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
         if (error !== null) {
           console.log('exec error: ' + error);
           console.log(stdout);
           console.log(stderr);
         }
     });
-}, 600000);
 
 console.log('Started up successfully.');

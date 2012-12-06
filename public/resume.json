@@ -7,7 +7,7 @@
     "SKILLS SUMMARY": {
         "Software Languages/Environments": {
             "Frontend": "JQuery, YUI 3, Javascript, HTML5, CSS3;",
-            "Backend": "Node.JS, Node.JS, Perl, Java/JSP;",
+            "Backend": "Node.JS, Perl, Java/JSP;",
             "Database": "MongoDB, Riak, MySQL, CouchDB;",
             "Scientific/Parallel": "Matlab, FORTRAN with MPI, C/C++."
         },
