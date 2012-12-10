@@ -3,31 +3,27 @@
     "Address":"1818 E Madison St. Apt 414, Seattle WA - 98122",
     "Phone": "(858) 822-8604 (cell)",
     "Email": "kristsauders@gmail.com",
-    "OBJECTIVE": "Systems architect and rapid prototype developer with a keen sense of usability and design, very comfortable working with marketing and business stakeholders, looking for highly challenging work taking concepts all the way to finished products.",
+    "OBJECTIVE": "Systems engineer and rapid prototype developer with a keen sense of usability and design, very comfortable working with marketing and business stakeholders, looking for highly challenging work taking concepts all the way to finished products.",
     "SKILLS SUMMARY": {
         "Software Languages/Environments": {
             "Frontend": "JQuery, YUI 3, Javascript, HTML5, CSS3;",
-            "Backend": "Node.JS, Perl, Java/JSP;",
-            "Database": "MongoDB, Riak, MySQL, CouchDB;",
+            "Backend": "Node.JS, Ruby, Perl, Java/JSP;",
+            "Database": "MongoDB, MongoLab, Riak, MySQL, CouchDB, Google Cloud Storage API, Amazon S3;",
             "Scientific/Parallel": "Matlab, FORTRAN with MPI, C/C++."
         },
-        "Operating Systems": {
-            "Linux/Unix": "CentOS, Redhat Enterprise, Backtrack, Ubuntu, FreeBSD, Debian;",
-            "Windows": "Server 2008 R2, Server HPC, Hyper-V, Server 2012;",
-            "Mac": "OSX Server, OSX Mountain Lion (and older)."
-        },
         "Tools": {
+            "Virtualization": "OpenStack, AWS, VMWare Fusion, Hyper-V, VirtualBox, Proxmox VE, Parallels;",
+            "PaaS": "Micro Cloud Foundry, Google App Engine, Appfog, Stackato, Azure, Heroku, OpenShift;",
+            "Web Hosting": "Nginx, Apache, Tomcat, Sinatra, Jetty, BIND, Drupal;",
+            "Server Administration": "Jenkins, Webmin, Parallels Plesk, Apigee Key Manager;",
             "Networking": "Wireshark, Nessus, tcpdump, netcat, curl, aircrack-ng suite, SoapUI;",
-            "Web Hosting": "Apache, Tomcat, Sinatra, Jetty, Nginx, BIND, Drupal;",
-            "Server Administration": "Webmin, Parallels Plesk, Apigee Key Manager;",
-            "Monitoring": "Nagios, Apigee Control Center, Google Analytics, Browsermob, WebMetrics;",
-            "Virtualization": "Amazon Web Services, VMWare Fusion, Hyper-V, VirtualBox, Proxmox VE, Parallels, Stackato;",
-            "Development": "Cloud9 IDE, XML Spy, Eclipse, Xcode, Aptana;",
+            "Monitoring": "Graphite, Nagios, Apigee Control Center, Google Analytics, Browsermob, WebMetrics;",
+            "IDE": "Cloud9 IDE, XML Spy, Eclipse, Xcode, Aptana;",
             "Miscellaneous": "Github, GitLab, Mercurial, Quality Centre, Visio."
         },
         "Protocols": {
-            "Network": "ARP/DHCP, DNS, BGP, TCP/IP;",
             "Web Services": "RESTful, SOAP, ParlayX, OAuth, JSONP, CORS;",
+            "Network": "ARP/DHCP, DNS, BGP, TCP/IP;",
             "Data": "SMPP, HTTP, SCP, SFTP, SSL/TLS, SSH."
         }
     },
@@ -38,9 +34,9 @@
             "Dates": "July 2012 - present",
             "Details": [
                 "Worked on AT&T API Platform, part of the AT&T Developer Program (http://developer.att.com);",
-                "Lead project to design, build and deploy a new process, system and tools for API specification, documentation, review and publishing;",
+                "Lead project to design, develop and deploy a new set of tools for API design, documentation and publishing;",
                 "Served as technical lead in architecting and deploying a large site redesign by migrating all existing documentation to a new content management system, guided by final wireframes, comps and business needs, with budget restrictions;",
-                "Responsible for designing, testing and supporting tasks for multiple large usability tests of the AT&T API Platform and website;",
+                "Designed and supported multiple large usability studies of the API Platform and website, and worked to resolve all found issues;",
                 "Supported multiple AT&T Hackathons as a technical expert and evangelist;",
                 "Represented technical team to marketing and business stakeholders responsible for feature planning and user flow design;",
                 "Built JavaScript plugin prototype and documentation for accessing AT&T APIs, to gain support for implementing proper Cross Origin Resource Sharing (CORS) (http://attjs.kristsauders.com);",
@@ -96,7 +92,7 @@
             ]
         },
         {
-            "Title": "Drag & Drop Online Portfolio/Gallery Builder (http://photo.kristsauders.com)",
+            "Title": "Drag & Drop Online Portfolio/Gallery Builder (http://tabletop.kristsauders.com)",
             "Details": [
                 "Frontend design with JQuery, CSS3, HTML5 Canvas;",
                 "Backend built with Node.JS, using Express;",

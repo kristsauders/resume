@@ -28,11 +28,13 @@ app.use(allowCrossDomain);
 function sendMail(address, subject, text) {
     //General send e-mail
     // create reusable transport method (opens pool of SMTP connections)
+    var epwd = process.env.EMAIL_PASSWD || config.email.password;
+    console.log(epwd);
     var smtpTransport = nodemailer.createTransport("SMTP",{
         service: "Gmail",
         auth: {
             user: config.email.username,
-            pass: ENV_EMAIL_PASSWD || config.email.password
+            pass: epwd
         }
     });
     // setup e-mail data with unicode symbols
@@ -106,7 +108,7 @@ app.listen(8084, '127.0.0.1');
 // Rebuild PDF version of resume on start, will only work on OSX with wkhtmltopdf installed
     var date = new Date();
     console.log('Rebuilding PDF resume on ' + date.toLocaleString());
-    exec('/Applications/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf http://kristsauders.com/resume/resume.html ' + __dirname + '/public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
+    exec('/Applications/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf http://127.0.0.1:8084/resume.html ' + __dirname + '/public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
         if (error !== null) {
           console.log('exec error: ' + error);
           console.log(stdout);
