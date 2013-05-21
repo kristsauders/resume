@@ -9,7 +9,7 @@ exports['test resume app'] = function(assert, done) {
     });
     
     setTimeout(function(){
-        exec('/usr/bin/wkhtmltopdf http://localhost:8084/resume.html public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
+        exec('xvfb-run wkhtmltopdf http://localhost:8084/resume.html public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
             assert.equal(error, null, error);
             assert.notEqual(stdout, null, stdout);
             done();
