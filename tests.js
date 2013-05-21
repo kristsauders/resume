@@ -1,5 +1,6 @@
 var exec = require('child_process').exec,
-    assert = require('assert');
+    assert = require('assert'),
+    path = require('path');
 
 exports['test resume app'] = function(assert, done) {
   exec('node app.js', function(error, stdout, stderr) {
