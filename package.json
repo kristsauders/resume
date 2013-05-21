@@ -5,5 +5,5 @@
 	"express":""
   },
   "scripts": { "test": "node tests.js" },
-  "devDependencies": { "test": ">=0.0.5", "child_process": "" }
+  "devDependencies": { "test": ">=0.0.5" }
 }
