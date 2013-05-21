@@ -1,4 +1,6 @@
-var exec = require('child_process').exec;
+var exec = require('child_process').exec,
+    assert = require('assert');
+
 assert.ok(true, 'Running tests...');
 
 exports['test resume app'] = function(assert, done) {
