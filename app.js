@@ -109,7 +109,7 @@ app.listen(8084, '127.0.0.1');
 setTimeout(function() {
     var date = new Date();
     console.log('Rebuilding PDF resume on ' + date.toLocaleString());
-    exec('/Applications/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf http://localhost:8084/resume.html ' + __dirname + '/public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
+    exec('/usr/bin/wkhtmltopdf http://localhost:8084/resume.html ' + __dirname + '/public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
         if (error !== null) {
           console.log('exec error: ' + error);
           console.log(stdout);
