@@ -1,18 +1,17 @@
-var exec = require('child_process').exec,
-    assert = require('assert'),
-    path = require('path'),
-    fs = require('fs');
+var exec = require('child_process').exec;
 
 exports['test resume app'] = function(assert, done) {
+    // Start up the app
   exec('node app.js', function(error, stdout, stderr) {
         assert.equal(error, null, error);
         assert.notEqual(stdout, null, stdout);
         done();
     });
     
+    // Wait for app to start, then rebuild PDF
     setTimeout(function(){
         exec('xvfb-run wkhtmltopdf http://localhost:8084/resume.html + ' + process.cwd() + '/public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
-            assert.equal(stderr, null, stderr);
+            assert.equal(stderr, "", stderr);
             done();
         });
     }, 10000);
