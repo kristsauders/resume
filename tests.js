@@ -9,7 +9,7 @@ exports['test resume app'] = function(assert, done) {
     });
     
     setTimeout(function(){
-        exec('xvfb-run wkhtmltopdf http://localhost:8084/resume.html public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
+        exec('xvfb-run wkhtmltopdf http://localhost:8084/resume.html + ' + path.join(path.dirname(fs.realpathSync(__filename)), 'public/Krists_Auders_Resume.pdf'), function(error, stdout, stderr) {
             assert.equal(error, null, error);
             done();
         });
