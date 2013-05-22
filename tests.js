@@ -10,8 +10,8 @@ exports['test resume app'] = function(assert, done) {
     
     // Wait for app to start, then rebuild PDF
     setTimeout(function(){
-        exec('xvfb-run wkhtmltopdf http://localhost:8084/resume.html + ' + process.cwd() + '/public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
-            assert.equal('xvfb-run wkhtmltopdf http://localhost:8084/resume.html + ' + process.cwd() + '/public/Krists_Auders_Resume.pdf', "", 'xvfb-run wkhtmltopdf http://localhost:8084/resume.html + ' + process.cwd() + '/public/Krists_Auders_Resume.pdf');
+        exec('xvfb-run wkhtmltopdf http://localhost:8084/resume.html ' + process.cwd() + '/public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
+            assert.equal('xvfb-run wkhtmltopdf http://localhost:8084/resume.html ' + process.cwd() + '/public/Krists_Auders_Resume.pdf', "", 'xvfb-run wkhtmltopdf http://localhost:8084/resume.html ' + process.cwd() + '/public/Krists_Auders_Resume.pdf');
             assert.equal(stderr, "", stderr);
             assert.equal(stdout, "", stdout);
             assert.equal(error, "", error);
