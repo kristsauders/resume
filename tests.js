@@ -12,6 +12,8 @@ exports['test resume app'] = function(assert, done) {
     setTimeout(function(){
         exec('xvfb-run wkhtmltopdf http://localhost:8084/resume.html + ' + process.cwd() + '/public/Krists_Auders_Resume.pdf', function(error, stdout, stderr) {
             assert.equal(stderr, "", stderr);
+            assert.equal(stdout, "", stdout);
+            assert.equal(error, "", error);
             done();
         });
     }, 10000);
