@@ -2,7 +2,10 @@ language: node_js
 node_js:
   - "0.8"
 
-before_script: "sudo apt-get update && sudo apt-get install -y wkhtmltopdf openssl build-essential xorg libssl-dev xvfb"
+before_script: 
+  - sudo apt-get update
+  - sudo apt-get install -y wkhtmltopdf openssl build-essential xorg libssl-dev xvfb
+  - chmod 777 ./public/Krists_Auders_Resume.pdf
 
 env:
   global:
