@@ -3,12 +3,12 @@
     "Address":"120 Westlake Ave N Apt 1024, Seattle WA - 98109",
     "Phone": "(858) 822-8604 (cell)",
     "Email": "kristsauders@gmail.com",
-    "OBJECTIVE": "Systems engineer and rapid prototype developer with a keen sense of usability and design, very comfortable working with marketing and business stakeholders, looking for highly challenging work taking concepts all the way to finished products.",
+    "OBJECTIVE": "User experience developer and rapid prototyper with a keen sense of usability and design, looking for highly challenging work taking concepts all the way to finished products.",
     "SKILLS SUMMARY": {
         "Software Languages/Environments": {
-            "Frontend": "JQuery, YUI 3, Javascript, HTML5, CSS3;",
-            "Backend": "Node.JS, Ruby, Perl, Java/JSP;",
-            "Database": "MongoDB, MongoLab, Riak, MySQL, CouchDB, Google Cloud Storage API, Amazon S3;",
+            "Client": "AngularJS, Knockout, Twitter Bootstrap, JQuery (Mobile/UI), YUI 3, HTML5, CSS3;",
+            "Server": "C#, MVC4, Node.JS, Ruby, Perl, Java/JSP;",
+            "Database": "MongoDB, Riak, MySQL, CouchDB, Google Cloud Storage API, Amazon S3;",
             "Scientific/Parallel": "Matlab, FORTRAN with MPI, C/C++."
         },
         "Tools": {
@@ -18,8 +18,8 @@
             "Server Administration": "Jenkins, Webmin, Parallels Plesk, Apigee Key Manager;",
             "Networking": "Wireshark, Nessus, tcpdump, netcat, curl, aircrack-ng suite, SoapUI;",
             "Monitoring": "Graphite, Nagios, Apigee Control Center, Google Analytics, Browsermob, WebMetrics;",
-            "IDE": "Cloud9 IDE, XML Spy, Eclipse, Xcode, Aptana;",
-            "Miscellaneous": "Github, GitLab, Mercurial, Quality Centre, Visio."
+            "IDE": "Visual Studio, Cloud9 IDE, XML Spy, Eclipse, Xcode, Aptana;",
+            "Miscellaneous": "Travis CI, Github, GitLab, Mercurial, Quality Centre, Visio."
         },
         "Protocols": {
             "Web Services": "RESTful, SOAP, ParlayX, OAuth, JSONP, CORS;",
@@ -29,9 +29,22 @@
     },
     "PROFESSIONAL EXPERIENCE": [
         {
+            "Title": "Software Development Engineer (UX)",
+            "Employer": "DS-IQ (Bellevue, WA)",
+            "Dates": "January 2013 - present",
+            "Details": [
+                "Worked on a small team to build brand new single page applications from scratch;",
+                "Researched and prototyped solutions using different new technologies;",
+                "Did performance analysis and optimizations of the application;",
+                "Supported legacy applications for bugs and new features;",
+                "Troubleshot bugs and performance issues in all environments;"
+                "Developed mostly in Javascript and HTML, using AngularJS and JQuery Mobile, as well as server side work with C# and MVC4."
+            ]
+        },
+        {
             "Title": "Professional-Technical Architect",
             "Employer": "AT&T, Applications and Services Infrastructure (Redmond, WA)",
-            "Dates": "July 2012 - present",
+            "Dates": "July 2012 - December 2012",
             "Details": [
                 "Worked on AT&T API Platform, part of the AT&T Developer Program (http://developer.att.com);",
                 "Lead project to design, develop and deploy a new set of tools for API design, documentation and publishing;",
