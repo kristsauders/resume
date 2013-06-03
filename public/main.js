@@ -226,7 +226,7 @@ Krists Auders'
                     r.append('<br/>');
                     r.append('<p align="center"><strong>' + data.Name + '</strong><br/>' +
                                 data.Address.split(',')[0] + '<br/>' + data.Address.split(',')[1] + '<br/>' + data.Phone + '<br/>' +
-                                data.Email + '<br/>(' + data.LinkedIn + ')</p>');
+                                data.Email + '<br/>' + activateURLs('(' + data.LinkedIn + ')') + '</p>');
                     r.append('<hr style="margin-left:5%;margin-right:5%;background-color:#BDBDBD; height:2px;width:90%;" />');
                     r.append('<h3 class="indent">OBJECTIVE</h4>');
                     r.append('<div style="padding-left:3em;margin-left:5%;padding-right:6em;margin-right:10%;"><em class="half-muted">' + data['OBJECTIVE'] + '</em></div><br/>');
