@@ -4,7 +4,7 @@
 // For more information, contact Krists Auders at ka0565@att.com
 
 //var fqdn = 'https://api-uat.bf.pacer.sl.attcompute.com';
-var fqdn = 'http://api.kristsauders.com';
+var fqdn = 'http://cors-proxy.aws.af.cm';
 //var fqdn = 'https://api.att.com';
 function syntaxHighlight(json) {
     json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
