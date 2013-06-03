@@ -1,7 +1,9 @@
-            //$.cookie("prod_auth_access_token", "b6ed586e493147a7e229f8044c6d2b9e");
-            //$.cookie("prod_access_token", "6eb12f6593cd5b0b067e3255266422df");
+            $.cookie("prod_auth_access_token", "c4b16f69ba5617e99a685c158ff0dedc");
+            $.cookie("prod_access_token", "c4b16f69ba5617e99a685c158ff0dedc");
             api.init("2766e6c0911dfe29a199b21cbb87098e", "86159dea55f69e65", "SMS", function(data) {
                 $(document).ready(function(){
+                        console.log('Initialized ATT-JS, received data:');
+                        console.log(data);
                 });
             }, function(error) {
                 alert('There was an error initializing the ATT-JS plugin. Some features might not be available.');
