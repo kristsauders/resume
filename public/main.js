@@ -39,7 +39,7 @@
                 $("#emailMeSubmit").click(function() {
                     $('#emailMeSubmit').addClass("disabled loading");
                     $.ajax({
-                        url: '/resume/email',
+                        url: '/email',
                         type: 'post',
                         data: {
                             "address": 'kristsauders@gmail.com',
