@@ -113,7 +113,7 @@ My e-mail address is kristsauders@gmail.com. Thank you!', function(data) {
                 $("#getEmailSubmit").click(function() {
                     $('#getEmailSubmit').addClass("disabled loading");
                     $.ajax({
-                        url: '/resume/email',
+                        url: '/email',
                         type: 'post',
                         data: {
                             "address": $('#getEmailAddress').val(),
@@ -125,8 +125,8 @@ You requested to receive my contact information. This is an automated e-mail mes
 e-mail address, so you can reply directly to this message. I am also providing my full information below.\n\
 \n\
 Krists Auders\n\
-1818 E Madison St. Apt 414\n\
-Seattle WA - 98122\n\
+120 Westlake Ave N Apt 1024\n\
+Seattle WA - 98109\n\
 (858) 822-8604 (cell)\n\
 kristsauders@gmail.com\n\
 \n\
