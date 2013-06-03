@@ -116,6 +116,16 @@
             ]
         },
         {
+            "Title": "(Work In Progress) Facebook Photo Gallery Builder (http://photo.kristsauders.com)",
+            "Details": [
+                "Frontend design with AngularJS, Twitter Bootstrap, JQuery Isotope, CSS3;",
+                "Backend built with Node.JS, using Express;",
+                "MongoDB database for all user data;",
+                "Integrated with Facebook Graph API for signing in and importing photos;",
+                "Responsive Pinterest-style layouts, with more advanced layout options planned."
+            ]
+        },
+        {
             "Title": "Prototype for tablet focused menu/feedback web app (http://www.cs.washington.edu/education/courses/csep510/12sp/projects/restaurant2.0/index.html)",
             "Details": [
                 "Class project for graduate level Human Computer Interaction class;",
