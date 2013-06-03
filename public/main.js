@@ -129,6 +129,8 @@ Krists Auders\n\
 Seattle WA - 98109\n\
 (858) 822-8604 (cell)\n\
 kristsauders@gmail.com\n\
+Website: http://kristsauders.com\n\
+LinkedIn: http://www.linkedin.com/pub/krists-auders/42/310/680\n\
 \n\
 Thank you!\n\
 Krists Auders'
