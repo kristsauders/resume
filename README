@@ -1,4 +1,4 @@
-This is Krists Auders' interactive, online resumé source code. The site itself is available at http://kristsauders.com/resume.
+This is Krists Auders' interactive, online resumé source code. The site itself is available at http://kristsauders.com.
 
 The resumé itself is actually stored as a JSON document (resume.json). When the main HTML resumé page (index.html) loads, the JSON data is retrieved with JQuery and the HTML is rendered from it (main.js).
 
