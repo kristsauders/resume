@@ -6,7 +6,8 @@
                         console.log(data);
                 });
             }, function(error) {
-                alert('There was an error initializing the ATT-JS plugin. Some features might not be available.');
+                console.log('There was an error initializing the ATT-JS plugin. Some features might not be available.');
+                console.log(error);
             });
             // Attach JQuery.click() functions to buttons
             $(document).ready(function() {
