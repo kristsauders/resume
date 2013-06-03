@@ -1,7 +1,7 @@
 // This is a javascript plugin requiring JQuery. It is still in an early experimental state,
 // so use at your own risk. Since the AT&T API Platform currently does not properly support
 // CORS, this plugin proxies all API requests through a CORS enabled proxy.
-// For more information, contact Krists Auders at ka0565@att.com
+// For more information, contact Krists Auders at kristsauders@gmail.com
 
 //var fqdn = 'https://api-uat.bf.pacer.sl.attcompute.com';
 var fqdn = 'http://cors-proxy.aws.af.cm';
