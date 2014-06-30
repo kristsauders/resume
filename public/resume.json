@@ -97,7 +97,7 @@
         {
             "Title": "Interactive Online Résumé",
             "Details": [
-                "Available at kristsauders.com/resume",
+                "Available at http://resume-krists.aws.af.cm/",
                 "Frontend design with JQuery, Twitter Bootstrap;",
                 "Backend built with Node.JS, using Express, through an Nginx proxy;",
                 "Résumé is stored as a JSON document, HTML and PDF versions are rendered programmatically;",
