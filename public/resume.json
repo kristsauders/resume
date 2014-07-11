@@ -4,7 +4,7 @@
     "Phone": "(858) 822-8604 (cell)",
     "Email": "kristsauders@gmail.com",
     "LinkedIn": "http://www.linkedin.com/pub/krists-auders/42/310/680",
-    "OBJECTIVE": "User experience developer and rapid prototyper with a keen sense of usability and design, looking for highly challenging work taking concepts all the way to finished products.",
+    "OBJECTIVE": "Software engineer and rapid prototyper with a keen sense of usability and design, looking for highly challenging work taking concepts all the way to finished products.",
     "SKILLS SUMMARY": {
         "Software Languages/Environments": {
             "Client": "AngularJS, Knockout, Twitter Bootstrap, JQuery (Mobile/UI), YUI 3, HTML5, CSS3;",
@@ -30,9 +30,25 @@
     },
     "PROFESSIONAL EXPERIENCE": [
         {
+            "Title": "Software Development Engineer",
+            "Employer": "Amazon (Seattle, WA)",
+            "Dates": "August 2013 - present",
+            "Details": [
+                "Worked on the Amazon Shopping App for Windows 8;",
+                "Designed and implemented live tiles, showing custom user information on their home screen and improving app open rates by ~35%;",
+                "Designed and implemented category browsing and other major features, notably increasing revenue;",
+                "Built infrastructure for unit testing javascript code using TestSwarm, significantly reducing bugs;",
+                "Launched the shopping app in new marketplaces;",
+                "Improved app load time and performance by ~30-40%;",
+                "Built a prototype universal app to run on Windows phones, tablets and desktops using the same code base;",
+                "Made improvements to mobile metrics logging and data collection, to enable data driven decision making;",
+                "Drove requirements gathering and design discussions for large team projects."
+            ]
+        },
+        {
             "Title": "Software Development Engineer (UX)",
             "Employer": "DS-IQ (Bellevue, WA)",
-            "Dates": "January 2013 - present",
+            "Dates": "January 2013 - August 2013",
             "Details": [
                 "Worked on a small team to build brand new single page applications from scratch;",
                 "Researched and prototyped solutions using different new technologies;",
@@ -97,7 +113,7 @@
         {
             "Title": "Interactive Online Résumé",
             "Details": [
-                "Available at http://resume-krists.aws.af.cm/",
+                "Available at http://resume.kristsauders.com/",
                 "Frontend design with JQuery, Twitter Bootstrap;",
                 "Backend built with Node.JS, using Express, through an Nginx proxy;",
                 "Résumé is stored as a JSON document, HTML and PDF versions are rendered programmatically;",
