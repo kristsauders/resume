@@ -1,6 +1,6 @@
 {
     "Name":"Krists Auders", 
-    "Address":"101 Taylor Ave N, Apt 728, Seattle WA - 98109",
+    "Address":"101 Taylor Ave N Apt 728, Seattle WA - 98109",
     "Phone": "(858) 822-8604 (cell)",
     "Email": "kristsauders@gmail.com",
     "LinkedIn": "http://www.linkedin.com/pub/krists-auders/42/310/680",
@@ -27,9 +27,9 @@
             "Employer": "Amazon (Seattle, WA)",
             "Dates": "April 2015 - present",
             "Details": [
-                "Redesigned a new cross-browser platform, architecture, and build/deployment process for the Amazon 1Button App browser extension;",
+                "Redesigned a new cross-browser platform, product architecture, feature onboarding process, and build/deployment process for the Amazon 1Button App browser extension;",
                 "Served as the tech lead for a 9 month project with 9 contributing engineers to build the new platform;",
-                "Built a fully automated system that compiles, tests, and deploys every code change to every major browser extension platform and partner;",
+                "Built a fully automated system that compiles, tests, and deploys every code change to every major browser extension platform;",
                 "Built the core of the extension that manages every feature in a secure sandbox, and allows them to consume/expose APIs using a strict interface;",
                 "Planned the project roadmap, timelines and resourcing for the project;",
                 "Represented the platform and product architecture to external teams and management;",
