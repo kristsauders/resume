@@ -1,38 +1,46 @@
 {
     "Name":"Krists Auders", 
-    "Address":"636 NW 83rd Street, Seattle WA - 98117",
+    "Address":"101 Taylor Ave N, Apt 728, Seattle WA - 98109",
     "Phone": "(858) 822-8604 (cell)",
     "Email": "kristsauders@gmail.com",
     "LinkedIn": "http://www.linkedin.com/pub/krists-auders/42/310/680",
     "OBJECTIVE": "Software engineer and rapid prototyper with a keen sense of usability and design, looking for highly challenging work taking concepts all the way to finished products.",
     "SKILLS SUMMARY": {
         "Software Languages/Environments": {
-            "Client": "AngularJS, Knockout, Twitter Bootstrap, JQuery (Mobile/UI), YUI 3, HTML5, CSS3;",
-            "Server": "C#, MVC4, Node.JS, Ruby, Perl, Java/JSP;",
-            "Database": "MongoDB, Riak, MySQL, CouchDB, Google Cloud Storage API, Amazon S3;",
-            "Scientific/Parallel": "Matlab, FORTRAN with MPI, C/C++."
+            "Client": "Javascript, Typescript, AngularJS, Twitter Bootstrap, JQuery (Mobile/UI), HTML5, CSS3;",
+            "Server": "Node.JS, Perl, Java/JSP, C#, MVC4, Ruby;",
+            "Database": "Amazon S3, MongoDB, Riak, MySQL, CouchDB, Google Cloud Storage API."
         },
         "Tools": {
             "Virtualization": "OpenStack, AWS, VMWare Fusion, Hyper-V, VirtualBox, Proxmox VE, Parallels;",
             "PaaS": "Micro Cloud Foundry, Google App Engine, Appfog, Stackato, Azure, Heroku, OpenShift;",
             "Web Hosting": "Nginx, Apache, Tomcat, Sinatra, Jetty, BIND, Drupal;",
             "Server Administration": "Jenkins, Webmin, Parallels Plesk, Apigee Key Manager;",
-            "Networking": "Wireshark, Nessus, tcpdump, netcat, curl, aircrack-ng suite, SoapUI;",
+            "Networking": "Wireshark, Nessus, tcpdump, netcat, curl, aircrack-ng suite;",
             "Monitoring": "Graphite, Nagios, Apigee Control Center, Google Analytics, Browsermob, WebMetrics;",
-            "IDE": "Visual Studio, Cloud9 IDE, XML Spy, Eclipse, Xcode, Aptana;",
-            "Miscellaneous": "Travis CI, Github, GitLab, Mercurial, Quality Centre, Visio."
-        },
-        "Protocols": {
-            "Web Services": "RESTful, SOAP, ParlayX, OAuth, JSONP, CORS;",
-            "Network": "ARP/DHCP, DNS, BGP, TCP/IP;",
-            "Data": "SMPP, HTTP, SCP, SFTP, SSL/TLS, SSH."
+            "IDE": "WebStorm, IntelliJ IDEA, Visual Studio, Cloud9 IDE, Eclipse, Sublime Text."
         }
     },
     "PROFESSIONAL EXPERIENCE": [
         {
+            "Title": "Software Development Engineer II",
+            "Employer": "Amazon (Seattle, WA)",
+            "Dates": "April 2015 - present",
+            "Details": [
+                "Redesigned a new cross-browser platform, architecture, and build/deployment process for the Amazon 1Button App browser extension;",
+                "Served as the tech lead for a 9 month project with 9 contributing engineers to build the new platform;",
+                "Built a fully automated system that compiles, tests, and deploys every code change to every major browser extension platform and partner;",
+                "Built the core of the extension that manages every feature in a secure sandbox, and allows them to consume/expose APIs using a strict interface;",
+                "Planned the project roadmap, timelines and resourcing for the project;",
+                "Represented the platform and product architecture to external teams and management;",
+                "Introduced engineers from multiple teams to the new platform and helped them onboard to the new architecture;",
+                "Mentored and consulted for newer engineers on multiple teams."
+            ]
+        },
+        {
             "Title": "Software Development Engineer",
             "Employer": "Amazon (Seattle, WA)",
-            "Dates": "August 2013 - present",
+            "Dates": "August 2013 - March 2015",
             "Details": [
                 "Worked on the Amazon Shopping App for Windows 8;",
                 "Designed and implemented live tiles, showing custom user information on their home screen and improving app open rates by ~35%;",
@@ -41,7 +49,8 @@
                 "Launched the shopping app in new marketplaces;",
                 "Improved app load time and performance by ~30-40%;",
                 "Built a prototype universal app to run on Windows phones, tablets and desktops using the same code base;",
-                "Made improvements to mobile metrics logging and data collection, to enable data driven decision making."
+                "Made improvements to mobile metrics logging and data collection, to enable data driven decision making;",
+                "Guided the entire team through migrating their development from local hardware to Amazon EC2 virtual machines."
             ]
         },
         {
@@ -131,7 +140,7 @@
             ]
         },
         {
-            "Title": "(Work In Progress) Facebook Photo Gallery Builder (http://photo-app.kristsauders.com)",
+            "Title": "Facebook Photo Gallery Builder (http://photo-app.kristsauders.com)",
             "Details": [
                 "Frontend design with AngularJS, Twitter Bootstrap, JQuery Isotope, CSS3;",
                 "Backend built with Node.JS, using Express;",
